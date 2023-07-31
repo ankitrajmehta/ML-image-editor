@@ -1,4 +1,3 @@
-
-#include "bmp.h"
+#include "opener.h"
 
 float* linear_regression_model(int c, int train[c][2]);

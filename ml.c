@@ -24,12 +24,14 @@ void gradiant(double w, double b, int train[count][2], int tmp[2])
 {
     double dw = 0;
     double db = 0;
+    double x,y,y_p;
+
 
     for (int i =0; i < count; i++)
     {
-        double x = (train[i][0]);
-        double y = (train[i][1]);
-        double y_p = ceil(fmin((w * x  + b), 255));
+        x = (train[i][0]);
+        y = (train[i][1]);
+        y_p = fmin(ceil(w * x  + b), 255);
         y_p = fmax(y_p, 0);
         double dj_dw_i = (y_p - y) * x;
         double dj_db_i = y_p - y;
@@ -45,9 +47,9 @@ float* linear_regression_model(int c, int train[c][2])
 {
     count = c;
     srand(10);
-    double w=3 ;
+    double w=5 ;
     double b = 0;
-    int epoch = 200;
+    int epoch = 300;
     //double h = 1e-5;
     double rate = 1e-4;
 
